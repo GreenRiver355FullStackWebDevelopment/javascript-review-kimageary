@@ -23,3 +23,26 @@ const reviews = [
 /////////////////////////////////////////////////////////////////////
 
 //Your Code Below Here////
+
+function reviewRender(){
+  const reviewList = document.querySelector('reviews');
+
+  reviews.forEach((review) => {
+    const div = document.createElement('div');
+
+    const user = document.createElement('p');
+    user.textContent = review.username;
+
+    const starRating = document.createElement('p');
+    starRating.textContent = review.star;
+
+    const review = document.createElement('p');
+    review.textContent = review.review;
+
+    div.appendChild(user);
+    div.appendChild(starRating);
+    div.appendChild(review);
+
+    reviewList.appendChild(div);
+  })
+}
