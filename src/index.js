@@ -29,7 +29,7 @@ const reviews = [
 window.onload = () =>{
   reviewRender();
   formDataHandling();
-  calculateStarAverage();
+  starAverage();
 }
 
 function reviewRender(){
@@ -58,5 +58,33 @@ function reviewRender(){
     let rating = document.querySelector(".starRating");
 
     rating.textContent = "Star Rating: " + calculateStarAverage(reviews);
+  };
+
+
+  const formDataHandling = () => {
+    const form = document.querySelector("form");
+
+    form.addEventListener("submit", function(event){
+      event.preventDefault();
+
+      let user = document.getElementById("username").value;
+      let image = document.getElementById("image").value;
+      let star = parseInt(document.getElementById("star")).value;
+      let review = document.getElementById("review").value;
+
+      let newreview ={
+        user,
+        image,
+        start,
+        review
+      }
+
+      reviews.push(newreview);
+
+      renderReview();
+
+      starAverage();
+  });
   }
+  
 }
