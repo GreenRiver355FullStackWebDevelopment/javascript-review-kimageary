@@ -24,6 +24,12 @@ const reviews = [
 
 //Your Code Below Here////
 
+window.onload = () =>{
+  reviewRender();
+  formDataHandling();
+  calculateStarAverage();
+}
+
 function reviewRender(){
   const reviewList = document.querySelector('reviews');
 
